@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'crew', to: 'pages#crew'
   get 'map', to: 'pages#map'
-  get 'boat', to: 'pages#boat'
+  get 'ship', to: 'pages#ship'
   get 'treasury', to: 'pages#treasury'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

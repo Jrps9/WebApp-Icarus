@@ -1,9 +1,49 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap");
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Montserrat", "sans-serif";
+$headers-font: "Quicksand", "sans-serif";
+
+  h1, h2, h3, h4 {
+    font-family: $headers-font;
+    font-weight: normal;
+    color: $bleuboat;
+  }
+
+  p {
+    font-size: clamp(14px, 2vw, 25px);
+    font-family: $body-font;
+    font-weight: normal;
+    color: $noiricarus;
+    margin: 0.2em;
+  }
+
+  h4 {
+    font-size: clamp(22px, 3vw, 35px);
+  }
+
+  h3 {
+    font-size: clamp(24px, 4vw, 45px);
+  }
+
+  h2 {
+    font-size: clamp(35px, 5vw, 55px);
+  }
+
+  h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    letter-spacing: 0.2em;
+  }
+
+  h5 {
+    font-family: $headers-font;
+    font-weight: 400;
+    font-size: 2em;
+    text-transform: uppercase;
+    line-height: 1em;
+    transition: 1s ease-out;
+    color: $bleufonce;
+  }
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
