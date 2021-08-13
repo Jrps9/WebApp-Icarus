@@ -1,0 +1,10 @@
+.ship-container {
+  border-top: 1px solid $bleufonce;
+  border-bottom: 1px solid $bleufonce;
+  padding: 16px 0px;
+  .ship-container-row {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 16px 0px;
+  }
+}

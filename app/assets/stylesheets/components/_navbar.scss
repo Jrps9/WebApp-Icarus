@@ -1,12 +1,23 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+// Icarus Style
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-mobile-icarus {
+  position: absolute;
+  width: 80vw;
+  margin: 25px 10vw;
+  bottom: 0px;
+  .icons {
+      font-size: 28px;
+      color: $bleuboat;
+      text-shadow: 1px 1px 10px $papyrus;
+  }
+  ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      li {
+          display: inline-block;
+      }
+  }
 }

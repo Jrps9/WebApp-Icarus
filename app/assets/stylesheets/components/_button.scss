@@ -1,0 +1,58 @@
+.button-icarus {
+  background-color: $bleuboat;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+  margin: 16px 0px;
+  p {
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.button-icarus-img {
+  position: relative;
+  background-color: $bleuboat;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 28px;
+  text-align: center;
+  margin: 16px 0px;
+  p {
+    flex-grow: 2;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+  }
+  img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 4px;
+  }
+}
+
+.button-circle {
+  position: relative;
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+  background-color: $bleuboat;
+  p {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
+}
