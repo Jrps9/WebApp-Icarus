@@ -1,0 +1,45 @@
+@media screen and (min-width: 1200px) {
+  .arrow-back {
+    svg {
+      top: 6.5vh;
+    }
+  }
+  .crew-card {
+    .img--jl {
+      transform: translate3d(-50%, -33%, 0) !important;
+    }
+    &.active {
+      .crew-img {
+        height: 500px !important;
+        width: 500px !important;
+      }
+      .img--roro {
+        transform: translate3d(-0%, -48%, 0) !important;
+      }
+      .img--jl {
+        transform: translate3d(-0%, -53%, 0) !important;
+      }
+      .img--choco {
+        transform: translate3d(-0%, -48%, 0) !important;
+      }
+      .content {
+        transform: translate3d(-40%, -57%, 0) !important;
+      }
+    }
+  }
+  .crew-card {
+    .crew-img {
+      height: 500px;
+      width: 500px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 600px) {
+}
