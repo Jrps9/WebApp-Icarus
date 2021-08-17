@@ -22,6 +22,8 @@
     </div>
     <!-- <h3 id="ou" class="text-center">Ou</h3> -->
     <div class="calendrier-index">
+    <%= cl_image_tag("3wk9d7c75qikhxq2e1kpxq0bvi7q",
+      width: 400, height: 300, crop: :fill) %>
       <% @reservations.each do |reservation| %>
       <p><%=reservation.name%></p>
       <% end %>
