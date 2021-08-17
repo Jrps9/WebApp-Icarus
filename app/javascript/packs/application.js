@@ -26,7 +26,9 @@ require("channels")
 import "bootstrap";
 
 import { equipageToggle } from '../components/equipage';
+import { reservationsToggle } from '../components/reservations';
 
 document.addEventListener('turbolinks:load', () => {
   equipageToggle();
+  reservationsToggle();
 });

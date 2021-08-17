@@ -1,3 +1,15 @@
 .text-center {
   text-align: center;
 }
+
+.no-display {
+  animation: noDisplay forwards 0.3s;
+}
+
+.growUpFromTop {
+  animation: 1s growupfromtop 0.3s ease-out forwards;
+}
+
+.growUpFromBottom {
+  animation: 1s growupfrombottom 0.3s ease-out forwards;
+}

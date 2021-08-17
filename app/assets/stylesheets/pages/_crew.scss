@@ -16,7 +16,6 @@
   height: 100%;
   width: 70%;
   will-change: transform;
-  will-change: width;
   h3 {
     color: $noiricarus;
     margin-bottom: 10px;
@@ -116,6 +115,7 @@
   border-top: 1px solid $bleufonce;
   border-bottom: 1px solid $bleufonce;
   cursor: pointer;
+  will-change: height;
 }
 
 .circle--1::before,
@@ -141,7 +141,7 @@
 
 .circle--2::before,
 .circle--2::after {
-  background-color: rgba($color: $marronjl, $alpha: 0.5);
+  background-color: rgba($color: $vertjl, $alpha: 0.5);
 }
 
 .circle--3::before,

@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Reservations = Reservation.create([{user_id: 1, name: "Belle-île en Mer", destination: "Porquerolles"}, {user_id: 1, name: "La Grande Rade", destination: "Toulon"}])
