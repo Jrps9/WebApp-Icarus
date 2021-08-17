@@ -18,18 +18,29 @@
 <div class="container-icarus">
   <section class="calendrier-room">
     <div class="calendrier-section section--1">
-        <h3>Proposez une sortie</h3>
+      <h3>Proposez une sortie</h3>
     </div>
+    <!-- <%# Partie New %> -->
+    <div class="calendrier-new">
+      <%= simple_form_for (@reservation) do |f| %>
+      <h1>coucou</h1>
+        <%= f.input :name, required: true %>
+      <p><%= f.button :submit, value: "Souquez les artibuses !", class:"sortie-balise"%></p>
+      <% end %>
+    </div>
+    <!-- <%# Fin de Partie New %> -->
     <!-- <h3 id="ou" class="text-center">Ou</h3> -->
+    <!-- <%# Partie index %> -->
     <div class="calendrier-index">
-    <%= cl_image_tag("3wk9d7c75qikhxq2e1kpxq0bvi7q",
-      width: 400, height: 300, crop: :fill) %>
-      <% @reservations.each do |reservation| %>
+      <%# <%= cl_image_tag("3wk9d7c75qikhxq2e1kpxq0bvi7q", width: 400, height: 300,
+      crop: :fill) %>
+      <% @reservations.each do |reservation| %> %>
       <p><%=reservation.name%></p>
       <% end %>
     </div>
+    <!-- <%# Fin Partie index %> -->
     <div class="calendrier-section section--2">
-        <h3>Sorties précédentes</h3>
+      <h3>Sorties précédentes</h3>
     </div>
   </section>
 </div>

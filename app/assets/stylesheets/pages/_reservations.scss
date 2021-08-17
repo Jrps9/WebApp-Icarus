@@ -15,7 +15,7 @@
   cursor: pointer;
   width: 100%;
   flex-grow: 0;
-  transition: 1s ease-in;
+  // transition: 1s ease-in;
   min-height: 5%;
 }
 
@@ -25,4 +25,13 @@
 
 .section--2 {
   bottom: 20%;
+}
+
+.calendrier-index {
+  display: none;
+}
+
+.calendrier-new {
+  opacity: 0;
+  display: none;
 }

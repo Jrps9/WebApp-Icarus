@@ -1,8 +1,13 @@
-@keyframes noDisplay {
+@keyframes opacitydown {
     100% {
         opacity: 0;
-        visibility: hidden;
-        display: none;
+        pointer-events: none;
+    }
+}
+
+@keyframes upopacity {
+    100% {
+        opacity: 1;
     }
 }
 

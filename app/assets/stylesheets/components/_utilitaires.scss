@@ -2,14 +2,22 @@
   text-align: center;
 }
 
-.no-display {
-  animation: noDisplay forwards 0.3s;
+.downOpacity{
+  animation: opacitydown forwards 0.3s;
+}
+
+.upOpacity {
+  animation: upopacity forwards 0.3s;
+}
+
+.upOpacityModal {
+  animation: 0.5s upopacity forwards 1s;
 }
 
 .growUpFromTop {
-  animation: 1s growupfromtop 0.3s ease-out forwards;
+  animation: 0.7s growupfromtop 0.3s ease-in-out forwards;
 }
 
 .growUpFromBottom {
-  animation: 1s growupfrombottom 0.3s ease-out forwards;
+  animation: 0.7s growupfrombottom 0.3s ease-out forwards;
 }
