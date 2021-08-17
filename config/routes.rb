@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :reservations, only: [:index, :new, :show]
+  resources :reservations
   root to: 'pages#home'
   get 'crew', to: 'pages#crew'
   get 'map', to: 'pages#map'
