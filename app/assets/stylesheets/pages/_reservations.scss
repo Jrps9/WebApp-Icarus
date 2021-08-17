@@ -1,0 +1,28 @@
+.calendrier-room {
+  position: relative;
+  min-height: 68vh;
+  max-height: 68vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.calendrier-section {
+  position: absolute;
+  border-top: 1px solid $noiricarus;
+  border-bottom: 1px solid $noiricarus;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  flex-grow: 0;
+  transition: 1s ease-in;
+  min-height: 5%;
+}
+
+.section--1 {
+  top: 20%;
+}
+
+.section--2 {
+  bottom: 20%;
+}

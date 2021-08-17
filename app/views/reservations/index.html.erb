@@ -14,27 +14,20 @@
   </svg>
 </div>
 <% end %>
-
+<h1 class="text-center">Calendrier</h1>
 <div class="container-icarus">
-  <h1 class="text-center">Le Navire</h1>
-  <div class="ship-container">
-    <div class="ship-container-row">
-      <div class="button-circle">
-        <p>Notices</p>
-      </div>
-      <%= link_to 'reservations#index' do%>
-      <div class="button-circle">
-        <p>Calendrier</p>
-      </div>
+  <section class="calendrier-room">
+    <div class="calendrier-section section--1">
+        <h3>Proposez une sortie</h3>
+    </div>
+    <!-- <h3 id="ou" class="text-center">Ou</h3> -->
+    <div class="calendrier-index">
+      <% @reservations.each do |reservation| %>
+      <p><%=reservation.name%></p>
       <% end %>
     </div>
-    <div class="ship-container-row">
-      <div class="button-circle">
-        <p>Travaux</p>
-      </div>
-      <div class="button-circle">
-        <p>Armement</p>
-      </div>
+    <div class="calendrier-section section--2">
+        <h3>Sorties précédentes</h3>
     </div>
-  </div>
+  </section>
 </div>
