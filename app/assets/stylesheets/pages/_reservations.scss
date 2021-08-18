@@ -4,7 +4,6 @@
   max-height: 68vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 
 .calendrier-section {
@@ -39,9 +38,12 @@
 }
 
 .calendrier-index-list {
-  height: 50vh;
+  height: 60vh;
   width: 100%;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .calendrier-index-list::-webkit-scrollbar {
