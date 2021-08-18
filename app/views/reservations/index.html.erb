@@ -22,11 +22,11 @@
     </div>
     <div class="calendrier-new">
       <div class="cross">
-        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="40.6587" cy="40.6586" rx="28.5" ry="29" transform="rotate(45 40.6587 40.6586)" fill="#003674"/>
-          <line x1="26.8701" y1="53.7401" x2="53.7401" y2="26.87" stroke="white" stroke-width="2"/>
-          <line x1="28.2843" y1="26.87" x2="55.1543" y2="53.7401" stroke="white" stroke-width="2"/>
-          </svg>
+        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="23.2107" cy="22.8259" rx="16.2807" ry="16" transform="rotate(45 23.2107 22.8259)" fill="#003674"/>
+        <line x1="15.0912" y1="29.5312" x2="29.916" y2="14.7064" stroke="white" stroke-width="2"/>
+        <line x1="15.7071" y1="14.2929" x2="30.7921" y2="29.3778" stroke="white" stroke-width="2"/>
+        </svg>
       </div>
       <%= simple_form_for (@reservation) do |f| %>
         <%= f.input :start_day, as: :string, required: true, label: false, input_html: {id: "start_day", class: "d-none"} %>
@@ -40,11 +40,11 @@
     </div>
     <div class="calendrier-index">
       <div class="cross2">
-        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="40.6587" cy="40.6586" rx="28.5" ry="29" transform="rotate(45 40.6587 40.6586)" fill="#003674"/>
-          <line x1="26.8701" y1="53.7401" x2="53.7401" y2="26.87" stroke="white" stroke-width="2"/>
-          <line x1="28.2843" y1="26.87" x2="55.1543" y2="53.7401" stroke="white" stroke-width="2"/>
-          </svg>
+        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="23.2107" cy="22.8259" rx="16.2807" ry="16" transform="rotate(45 23.2107 22.8259)" fill="#003674"/>
+        <line x1="15.0912" y1="29.5312" x2="29.916" y2="14.7064" stroke="white" stroke-width="2"/>
+        <line x1="15.7071" y1="14.2929" x2="30.7921" y2="29.3778" stroke="white" stroke-width="2"/>
+        </svg>
       </div>
       <div class="calendrier-index-list">
       <% @reservations.each do |reservation| %>

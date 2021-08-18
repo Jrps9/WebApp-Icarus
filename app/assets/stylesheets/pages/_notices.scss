@@ -1,0 +1,15 @@
+.notices-list {
+  border-top: 1px solid $noiricarus;
+  border-bottom: 1px solid $noiricarus;
+  overflow: scroll;
+  max-height: 50vh;
+}
+
+.notices-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .notices-list {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
