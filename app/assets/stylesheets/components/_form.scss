@@ -1,0 +1,33 @@
+.form-control {
+  font-style: italic;
+  font-family: $body-font;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 28px 0px 16px;
+  border: 1px solid $bleuboat;
+  border-radius: 18px;
+  text-align: center;
+  height: 28px;
+  &:focus {
+    outline: none;
+    border: 1px solid $bleuboat;
+    box-shadow: 0px 0px 4px $bleuboat;
+  }
+}
+
+.btn {
+    border: none;
+    text-decoration: none;
+    background-color: $bleuboat;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    font-size: 20px;
+    font-family: $body-font;
+    color: white;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+}

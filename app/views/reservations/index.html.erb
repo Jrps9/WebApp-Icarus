@@ -20,27 +20,43 @@
     <div class="calendrier-section section--1">
       <h3>Proposez une sortie</h3>
     </div>
-    <!-- <%# Partie New %> -->
     <div class="calendrier-new">
+      <div class="cross">
+        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="40.6587" cy="40.6586" rx="28.5" ry="29" transform="rotate(45 40.6587 40.6586)" fill="#003674"/>
+          <line x1="26.8701" y1="53.7401" x2="53.7401" y2="26.87" stroke="white" stroke-width="2"/>
+          <line x1="28.2843" y1="26.87" x2="55.1543" y2="53.7401" stroke="white" stroke-width="2"/>
+          </svg>
+      </div>
       <%= simple_form_for (@reservation) do |f| %>
-      <h1>coucou</h1>
-        <%= f.input :name, required: true %>
-      <p><%= f.button :submit, value: "Souquez les artibuses !", class:"sortie-balise"%></p>
+        <%= f.input :start_day, as: :string, required: true, label: false, input_html: {id: "start_day", class: "d-none"} %>
+        <%= f.input :end_day, as: :string, required: true, label: false, input_html: {id: "end_day", class: "d-none"} %>
+        <%= f.input :name, required: true, label: false, placeholder: "Nommer la sortie" %>
+        <p><%= f.button :submit, value: "Proposez cette sortie"%></p>
       <% end %>
     </div>
-    <!-- <%# Fin de Partie New %> -->
-    <!-- <h3 id="ou" class="text-center">Ou</h3> -->
-    <!-- <%# Partie index %> -->
-    <div class="calendrier-index">
-      <%# <%= cl_image_tag("3wk9d7c75qikhxq2e1kpxq0bvi7q", width: 400, height: 300,
-      crop: :fill) %>
-      <% @reservations.each do |reservation| %> %>
-      <p><%=reservation.name%></p>
-      <% end %>
-    </div>
-    <!-- <%# Fin Partie index %> -->
     <div class="calendrier-section section--2">
       <h3>Sorties précédentes</h3>
+    </div>
+    <div class="calendrier-index">
+      <div class="cross2">
+        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="40.6587" cy="40.6586" rx="28.5" ry="29" transform="rotate(45 40.6587 40.6586)" fill="#003674"/>
+          <line x1="26.8701" y1="53.7401" x2="53.7401" y2="26.87" stroke="white" stroke-width="2"/>
+          <line x1="28.2843" y1="26.87" x2="55.1543" y2="53.7401" stroke="white" stroke-width="2"/>
+          </svg>
+      </div>
+      <div class="calendrier-index-list">
+      <% @reservations.each do |reservation| %>
+        <div class="card-trip">
+          <div class="card-trip-white-part"></div>
+          <div class="card-trip-blue-part">
+          <h4><%= reservation.destination %></h4>
+          <p><em><%= reservation.name %></em></p>
+          </div>
+        </div>
+      <% end %>
+      </div>
     </div>
   </section>
 </div>
