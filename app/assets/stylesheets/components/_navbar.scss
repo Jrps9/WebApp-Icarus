@@ -10,6 +10,11 @@
       font-size: 28px;
       color: $bleuboat;
       text-shadow: 1px 1px 10px $papyrus;
+      opacity: 0.5;
+      &.active{
+        opacity: 1;
+        text-shadow: 1px 1px 10px $bleuboatshadow;
+      }
   }
   ul {
       list-style: none;

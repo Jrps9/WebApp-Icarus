@@ -2,20 +2,30 @@
   position: relative;
   background-color: $bleuboat;
   height: 150px;
+  max-height: 150px;
   display: flex;
   border-radius: 12px;
   box-shadow: 4px 4px 10px $bleuboatshadow;
   .card-work-white-part {
     border-radius: 8px 72px 72px 8px;
     flex-grow: 1;
+    max-width: 50%;
     background-color: $papyrus;
+    background-image: url("IMG_7504-2.jpg");
+    background-position: center;
+    background-size: cover;
   }
   .card-work-blue-part {
     border-radius: 8px;
     flex-grow: 1;
+    max-width: 50%;
     background-color: $bleuboat;
-    p {
+    z-index: 2;
+    text-align: center;
+    padding: 8px 0px;
+    p, h4 {
       color: white;
+      margin: 0;
     }
   }
   .card-work-circle {

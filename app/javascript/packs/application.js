@@ -27,8 +27,10 @@ import "bootstrap";
 
 import { equipageToggle } from '../components/equipage';
 import { reservationsToggle } from '../components/reservations';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   equipageToggle();
   reservationsToggle();
+  initFlatpickr();
 });

@@ -1,0 +1,27 @@
+.card-trip {
+  height: 150px;
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background-image: url("IMG_7504-2.jpg");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 4px 4px 10px $bleuboatshadow;
+  cursor: pointer;
+  margin: 20px 0px;
+  .card-trip-white-part {
+    flex-grow: 1;
+    // background-color: $papyrus;
+    border-radius: 12px 12px 0px 0px;
+  }
+  .card-trip-blue-part {
+    background-color: $bleuboatshadowcard;
+    border-radius: 0% 100% 12px 12px;
+    p, h1, h2, h3, h4 {
+        color: white;
+        margin: 8px 0px 8px 8px;
+        font-weight: 500;
+    }
+  }
+}
