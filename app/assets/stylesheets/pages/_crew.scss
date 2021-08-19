@@ -77,15 +77,15 @@
       }
     }
     .crew-img {
-      height: 300px;
-      width: 300px;
+      height: 200px;
+      width: 200px;
       opacity: 1;
       transform: translate3d(-50%, 2%, 0);
       &.img--roro {
-        transform: translate3d(-38%, -18%, 0);
+        transform: translate3d(-13%, -18%, 0);
       }
       &.img--jl {
-        transform: translate3d(-65%, -10%, 0);
+        transform: translate3d(-95%, -10%, 0);
       }
       &.img--choco {
         transform: translate3d(-34%, -10%, 0);
