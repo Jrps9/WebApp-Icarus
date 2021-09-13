@@ -32,7 +32,7 @@
         <%= f.input :start_day, as: :string, required: true, label: false, input_html: {id: "start_day", class: "d-none"} %>
         <%= f.input :end_day, as: :string, required: true, label: false, input_html: {id: "end_day", class: "d-none"} %>
         <%= f.input :name, required: true, label: false, placeholder: "Nommer la sortie" %>
-        <p><%= f.button :submit, value: "Proposez cette sortie"%></p>
+        <p><%= f.button :submit, "Proposez cette sortie" %></p>
       <% end %>
     </div>
     <div class="calendrier-section section--2">
@@ -48,13 +48,13 @@
       </div>
       <div class="calendrier-index-list">
       <% @reservations.each do |reservation| %>
-        <div class="card-trip">
+        <%= link_to reservation_path(reservation), class: "card-trip" do %>
           <div class="card-trip-white-part"></div>
           <div class="card-trip-blue-part">
           <h4><%= reservation.destination %></h4>
           <p><em><%= reservation.name %></em></p>
           </div>
-        </div>
+        <% end %>
       <% end %>
       </div>
     </div>

@@ -37,6 +37,9 @@ gem 'simple_form'
 # My gems
 
 gem 'cloudinary', '~> 1.16.0'
+gem 'geocoder'
+
+# End of My gems
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

@@ -12,14 +12,6 @@ class ReservationsController < ApplicationController
       # if (current_user)
       # @admin = current_user.admin
       # end
-
-      # @markers = @reservations.geocoded.map do |reservation|
-      #   {
-      #     lat: reservation.latitude,
-      #     lng: reservation.longitude,
-      #     infoWindow: render_to_string(partial: "info_window", locals: { reservation: reservation })
-      #   }
-      # end
     end
 
     def show

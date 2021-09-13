@@ -14,11 +14,14 @@
   </svg>
 </div>
 <% end %>
-<div class="container-icarus">
-  <h1 class="text-center">Carte des Mers</h1>
-  <div id="map"
-     style="width: 100%; height: 60vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div class="container-icarus-show">
+  <h1 class="text-center">Editer la sortie</h1>
+  <%= simple_form_for (@reservation) do |f| %>
+  <%= f.input :destination, label: "Destination" %>
+  <%= f.input :name, label: "Nom de la sortie" %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :start_day, as: :string, label: "Jour de départ"%>
+  <%= f.input :end_day, as: :string, label: "Jour d'arrivée"%>
+  <%= f.button :submit, 'Confirmer' %>
+  <% end %>
 </div>

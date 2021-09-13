@@ -1,6 +1,11 @@
-// Import page-specific CSS files here.
+// Navbar-Pages
 @import "home";
-@import "ship";
 @import "crew";
 @import "reservations";
-@import "notices";
+@import "show";
+@import "edit";
+
+// Ship-Pages
+
+@import "ship/ship";
+@import "ship/notices";
