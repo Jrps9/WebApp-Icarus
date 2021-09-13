@@ -36,7 +36,6 @@ const reservationsToggle = () => {
             indexResa.classList.add("upOpacityModal");
             indexResa.style.display = "flex";
             cross2.addEventListener("click", () => {
-              console.log("coucou")
               indexResa.classList.remove("upOpacityModal");
               indexResa.classList.add("opacityMoins");
               section2.classList.remove("growUpSection2");

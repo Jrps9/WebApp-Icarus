@@ -8,9 +8,10 @@
   background-image: url("IMG_7504-2.jpg");
   background-position: center;
   background-size: cover;
-  box-shadow: 4px 4px 10px $bleuboatshadow;
+  box-shadow: 2px 2px 6px $bleuboatshadow;
   cursor: pointer;
   margin: 20px 0px;
+  text-decoration: none;
   .card-trip-white-part {
     flex-grow: 1;
     // background-color: $papyrus;

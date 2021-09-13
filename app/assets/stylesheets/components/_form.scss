@@ -1,9 +1,15 @@
+.simple_form {
+  text-align: center;
+  font-family: $body-font;
+}
+
 .form-control {
+  max-width: 70vw;
   font-style: italic;
   font-family: $body-font;
   font-weight: 500;
   font-size: 20px;
-  margin: 28px 0px 16px;
+  margin: 20px 0px 42px;
   border: 1px solid $bleuboat;
   border-radius: 18px;
   text-align: center;
@@ -12,6 +18,12 @@
     outline: none;
     border: 1px solid $bleuboat;
     box-shadow: 0px 0px 4px $bleuboat;
+  }
+  &.text {
+    height: 100px;
+  }
+  button {
+    underline: none;
   }
 }
 
@@ -31,3 +43,10 @@
     width: 100%;
     cursor: pointer;
 }
+
+// input {
+//   border: none;
+//   font-family: $body-font;
+//   width: 100%;
+//   color: white;
+// }
