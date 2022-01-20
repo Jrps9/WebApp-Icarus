@@ -1,0 +1,46 @@
+.overlay-flashes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #141414b0;
+    z-index: 1000;
+    opacity: 1;
+    animation: 2s nodisplayoverlay ease forwards ;
+    will-change: transform;
+}
+
+.alert {
+    z-index: 1000;
+}
+
+.alert-info,
+.alert-warning {
+    background-color: $papyrus;
+    box-shadow: 0px 0px 4px $bleuboat;
+    color: $noiricarus;
+    font-size: clamp(20px, 2vw, 25px);
+    font-family: $body-font;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 16px;
+    width: 70vmin;
+    border-radius: 4px;
+    animation: 2s flashes ease forwards ;
+}
+
+.close {
+    border: none;
+    box-sizing: border-box;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0px 10px 10px 0px;
+    height: 100%;
+    width: 16px;
+}

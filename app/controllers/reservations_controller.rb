@@ -24,7 +24,7 @@ class ReservationsController < ApplicationController
     def destroy
       reservation = Reservation.find(params[:id])
       reservation.destroy
-      redirect_to reservations_path
+      redirect_to reservations_path, notice: "La sortie a été supprimée"
     end
 
     def edit
@@ -34,14 +34,14 @@ class ReservationsController < ApplicationController
     def update
       @reservation = Reservation.find(params[:id])
       @reservation.update(reservation_params)
-      redirect_to reservations_path(@reservations)
+      redirect_to reservations_path(@reservations), notice: "Sortie mise à jour !"
     end
 
     def create
       @reservation = Reservation.new(reservation_params)
       @reservation.user = current_user
       if @reservation.save
-        redirect_to reservations_path(@reservation)
+        redirect_to reservations_path(@reservation), notice: "Sortie validée !"
       else
       render :new
       end

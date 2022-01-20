@@ -2,37 +2,40 @@
   <h1 class="text-center">Icarus</h1>
   <h3>L'app de Bord</h3>
 
-  <!-- <div class="button-icarus">
-    <p>Clique</p>
-  </div> -->
 
-  <!-- <div class="button-icarus-img">
+  <div class="button-icarus">
+    <%= link_to new_user_session_path do%>
+     <p>Log In</p>
+    <% end %>
+  </div>
+
+  <div class="button-icarus-img">
     <img src="https://picsum.photos/200/300?random=1" alt="" />
-    <p>Clique</p>
-  </div> -->
-<!--
-  <div class="card-work">
-    <div class="card-work-white-part">
-      <p>white</p>
+    <%= link_to destroy_user_session_path, :method => "DELETE" do%>
+     <p>Log Out</p>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="card-work">
+      <div class="card-work-white-part">
+        <p>white</p>
+      </div>
+      <div class="card-work-blue-part">
+        <h4>Matos :</h4>
+        <p>corde</p>
+        <p>corde</p>
+        <p>corde</p>
+      </div>
+      <div class="card-work-circle"></div>
     </div>
-    <div class="card-work-blue-part">
-      <h4>Matos :</h4>
-      <p>corde</p>
-      <p>corde</p>
-      <p>corde</p>
+
+    <br />
+    <div class="card-trip">
+      <div class="card-trip-white-part"><p>white</p></div>
+      <div class="card-trip-blue-part">
+        <h4>Porquerolles</h4>
+        <p><em>La sortie printanière</em></p>
+      </div>
     </div>
-    <div class="card-work-circle"></div>
-  </div> -->
-  <!-- <div class="card-trip">
-    <div class="card-trip-white-part"><p>white</p></div>
-    <div class="card-trip-blue-part"><p>blue</p></div>
-  </div> -->
-  <!-- <br />
-  <div class="card-trip">
-    <div class="card-trip-white-part"><p>white</p></div>
-    <div class="card-trip-blue-part">
-      <h4>Porquerolles</h4>
-      <p><em>La sortie printanière</em></p>
-    </div>
-  </div> -->
+  </div>
 </div>

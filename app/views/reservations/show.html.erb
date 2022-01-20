@@ -35,6 +35,8 @@
       <p>Editer</p>
       <% end %>
       <br>
-      <div class="button-icarus delete"><p>Supprimer</p></div>
+      <%= link_to reservation_path(@reservation), method: :delete, class: "button-icarus delete" do %>
+        <p>Supprimer</p>
+      <% end %>
   </div>
 </div>

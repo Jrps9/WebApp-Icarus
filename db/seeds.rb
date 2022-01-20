@@ -9,8 +9,10 @@
 Reservation.destroy_all
 User.destroy_all
 
-User1 = User.create!({email: "toto@gmail.com", password: "tototo", password_confirmation: "tototo"})
-
+User1 = User.create!({email: "toto@gmail.com", name: "Loulou", password: "tototo", password_confirmation: "tototo"})
+User2 = User.create!({email: "titi@gmail.com", name: "Roro", password: "tititi", password_confirmation: "tititi"})
+User3 = User.create!({email: "tata@gmail.com", name: "Choco", password: "tatata", password_confirmation: "tatata"})
+puts "Users are alive"
 Reservations = Reservation.create!([
     {user_id: User1.id, name: "Belle-île en Mer", destination: "Porquerolles", latitude: 42.998653, longitude: 6.167719},
     {user_id: User1.id, name: "La Grande Rade", destination: "Toulon", latitude: 43.124228, longitude: 5.928},
@@ -21,3 +23,4 @@ Reservations = Reservation.create!([
     {user_id: User1.id, name: "Faire du surf", destination: "Saint-Cyr", latitude: 43.172589, longitude: 5.686602},
     {user_id: User1.id, name: "Manger des oursins", destination: "Le Pradet", latitude: 43.089240 , longitude: 6.020089},
     ])
+    puts "Reservations are ok !"

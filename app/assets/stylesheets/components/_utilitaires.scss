@@ -1,3 +1,8 @@
+.bgOpacity {
+  opacity: 0.03;
+  transition: 0.6s ease;
+}
+
 .text-center {
   text-align: center;
 }
@@ -30,7 +35,7 @@
 }
 
 .growUpSection2 {
-  animation: 0.7s growupsection2 0.3s ease-out forwards;
+  animation: 0.7s growupsection2 0.3s ease-in-out forwards;
   h3 {
     animation: 0.5s downopacity forwards 1s;
   }
