@@ -18,7 +18,6 @@ puts "Users are alive"
 
 Reservations = Reservation.create!([
     {user_id: user1.id, name: "Belle-île en Mer", destination: "Porquerolles", latitude: 42.998653, longitude: 6.167719},
-    {user_id: user1.id, name: "La Grande Rade", destination: "Toulon", latitude: 43.124228, longitude: 5.928},
     {user_id: user1.id, name: "Le Bitch-Volley", destination: "Hyères", latitude: 43.035147 , longitude: 6.134487},
     {user_id: user1.id, name: "Ecouter du Jazz", destination: "Les Ambiez", latitude: 43.070172, longitude: 5.786512},
     {user_id: user1.id, name: "Boire des canons", destination: "Marseille", latitude: 43.220103, longitude: 5.330713},
