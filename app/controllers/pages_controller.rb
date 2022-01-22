@@ -25,4 +25,16 @@ class PagesController < ApplicationController
     end
   end
 
+  # def treasury
+  #   @spents = Spent.all
+  #   @spent = Spent.new
+  #   @loulouspent = Spent.where(:user_id => 1).totalWhiteSpent
+  #   @rorospent = Spent.where(:user_id => 2).totalWhiteSpent
+  #   @chocospent = Spent.where(:user_id => 3).totalWhiteSpent
+  # end
+
+  def tricount
+
+  end
+
 end

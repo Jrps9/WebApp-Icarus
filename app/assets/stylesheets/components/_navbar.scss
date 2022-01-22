@@ -4,26 +4,28 @@
   position: absolute;
   position: fixed;
   width: 80vw;
-  margin: 25px 10vw;
+  padding: 25px 10vw;
   bottom: 0px;
+  background: rgb(255, 255, 255);
+  background: $scrollgradient;
   .icons {
-      font-size: 28px;
-      color: $bleuboat;
-      text-shadow: 1px 1px 10px $papyrus;
-      opacity: 0.5;
-      &.active{
-        opacity: 1;
-        text-shadow: 1px 1px 10px $bleuboatshadow;
-      }
+    font-size: 28px;
+    color: $bleuboat;
+    text-shadow: 1px 1px 10px $papyrus;
+    opacity: 0.5;
+    &.active {
+      opacity: 1;
+      text-shadow: 1px 1px 10px $bleuboatshadow;
+    }
   }
   ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: space-between;
-      li {
-          display: inline-block;
-      }
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    li {
+      display: inline-block;
+    }
   }
 }

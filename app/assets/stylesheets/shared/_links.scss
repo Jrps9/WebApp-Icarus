@@ -1,0 +1,11 @@
+.links-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
+  a {
+    text-decoration: none;
+    color: $bleuboat;
+  }
+}

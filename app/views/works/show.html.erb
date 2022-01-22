@@ -1,0 +1,50 @@
+<%= link_to 'javascript:history.back()' do %>
+<div class="arrow-back">
+  <svg
+    width="35"
+    height="35"
+    viewBox="0 0 35 35"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.47978 17.1464C5.28452 17.3417 5.28452 17.6583 5.47978 17.8536L8.66176 21.0355C8.85702 21.2308 9.1736 21.2308 9.36887 21.0355C9.56413 20.8403 9.56413 20.5237 9.36887 20.3284L6.54044 17.5L9.36887 14.6716C9.56413 14.4763 9.56413 14.1597 9.36887 13.9645C9.1736 13.7692 8.85702 13.7692 8.66176 13.9645L5.47978 17.1464ZM24.5 17L5.83333 17V18L24.5 18V17Z"
+      fill="#003674"
+    />
+  </svg>
+</div>
+<% end %>
+<div class="container-icarus">
+  <div class="show-image">
+    <h1><%= @work.name %></h1>
+    <%= image_tag("IMG_7504-2") %>
+  </div>
+  <div class="show-description">
+    <h3 class="text-center">Travailleurs assignés :</h3>
+    <div class="show-portrait-container">
+        <% @work.workersName.each do |worker|%>
+            <div class="portrait-column">
+                <%= image_tag(worker.portrait, :class => "portrait --small #{worker.name}") %>
+                <p><%= worker.name %></p>
+            </div>
+        <% end %>
+    </div>
+
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni
+      consequatur quia laborum neque! Laudantium rerum nobis alias temporibus
+      nostrum laboriosam, impedit eaque deserunt sit dolorem, nisi dolore atque,
+      non accusamus!
+    </p>
+  </div>
+
+  <div class="show-buttons">
+      <%= link_to edit_work_path(@work), class: "button-icarus" do %>
+      <p>Editer</p>
+      <% end %>
+      <br>
+      <%= link_to work_path(@work), method: :delete, class: "button-icarus delete" do %>
+        <p>Supprimer</p>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="newSpentModal">
+  <h3 class="text-center">Ajouter une dépense</h3>
+  <%= simple_form_for (@spent), local: false do |f| %>
+  <%= f.input :name, required: true %>
+  <%= f.input :white_spent, required: true %>
+  <%= f.input :black_spent %>
+  <%= f.input :participants, label: "Participants",
+                       collection: Spent::AUTHORIZED_PARTICIPANTS,
+                       include_blank: true,
+                       selected: params[:participants],
+                       input_html: { name: :participants } %>
+  <%= f.button :submit, "Confirmer" %></p>
+  <% end %>
+</div>

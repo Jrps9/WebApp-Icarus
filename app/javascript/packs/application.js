@@ -29,10 +29,14 @@ import { equipageToggle } from '../components/equipage';
 import { reservationsToggle } from '../components/reservations';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
+import { newSpentModal } from '../components/spentModal';
+import { toggleList } from '../components/toggleList';
 
 document.addEventListener('turbolinks:load', () => {
   equipageToggle();
   reservationsToggle();
   initFlatpickr();
   initMapbox();
+  newSpentModal();
+  toggleList();
 });

@@ -1,0 +1,78 @@
+.scroll-list {
+  border-top: 1px solid $noiricarus;
+  border-bottom: 1px solid $noiricarus;
+  overflow: scroll;
+  will-change: height;
+  will-change: transform;
+  transition: 0.6s;
+  position: relative;
+  scroll-behavior: smooth;
+  &.--hidden {
+    height: 0vh;
+    transform: scale(1, 0.5);
+  }
+  &.open {
+    height: 20vh;
+    transform: scale(1, 1);
+  }
+}
+
+.scroll-column-body {
+  display: flex;
+}
+
+.scroll-column .--hidden {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  will-change: width;
+  will-change: transform;
+  transition: 0.6s;
+  position: relative;
+  scroll-behavior: smooth;
+  height: 40vh;
+  &.--hidden {
+    width: 0vh;
+  }
+  &.open {
+    width: 100%;
+    // border-left: 1px solid $bleuboat;
+    // border-right: 1px solid $bleuboat;
+  }
+}
+
+
+.scroll-list::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-list {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-shadow {
+  height: 30px;
+  background: rgb(255, 255, 255);
+  background: $scrollgradient;
+  position: sticky;
+  z-index: 1000;
+  width: 100%;
+  &.--top {
+    transform: rotate(180deg);
+    top: 0;
+  }
+  &.--bot {
+    bottom: 0;
+  }
+}
+
+.accordeon {
+  transition: 0.6s ease;
+  font-size: clamp(14px, 2vw, 25px);
+  color: $bleuboat;
+}
+
+.scroll-column-header {
+  display: flex;
+}
+

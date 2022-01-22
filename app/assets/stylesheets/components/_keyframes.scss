@@ -8,6 +8,53 @@
     }
 }
 
+@keyframes nodisplay {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+        pointer-events: none;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@keyframes nodisplayoverlay {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+        pointer-events: none;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes flashes {
+    0% {
+        transform: translate(200%, -50%)
+    }
+    20% {
+        transform: translate(-46%, -50%)
+    }
+    80% {
+        transform: translate(-50%, -50%)
+    }
+    100% {
+        transform: translate(-200%, -50%)
+    }
+}
+
 @keyframes upopacity {
     100% {
         opacity: 1;
