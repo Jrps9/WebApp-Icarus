@@ -22,13 +22,15 @@
   </div>
   <div class="ship-container">
     <div class="ship-container-row">
-      <%= link_to 'reservations#index' do%>
-      <div class="button-circle">
-        <p>Calendrier</p>
-      </div>
+      <%= link_to reservations_path do%>
+        <div class="button-circle">
+          <p>Calendrier</p>
+        </div>
       <% end %>
       <div class="button-circle">
-        <p>Travaux</p>
+        <%= link_to works_path do%>
+          <p>Travaux</p>
+        <% end %>
       </div>
     </div>
     <div class="ship-container-row">

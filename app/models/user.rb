@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reservation
   has_many :spent
+  has_and_belongs_to_many :works
+
   def allWhiteSpent
     @counter = 0
     self.spent.all.each do |s|
@@ -12,6 +14,7 @@ class User < ApplicationRecord
     end
     return @counter
   end
+
   def allBlackSpent
     @counter = 0
     self.spent.all.each do |s|
@@ -19,4 +22,5 @@ class User < ApplicationRecord
     end
     return @counter
   end
+
 end

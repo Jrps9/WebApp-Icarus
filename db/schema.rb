@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_142342) do
+ActiveRecord::Schema.define(version: 2022_01_22_135339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,11 +78,31 @@ ActiveRecord::Schema.define(version: 2022_01_19_142342) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", null: false
+    t.string "portrait"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_works", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "work_id", null: false
+    t.index ["user_id", "work_id"], name: "index_users_works_on_user_id_and_work_id"
+    t.index ["work_id", "user_id"], name: "index_users_works_on_work_id_and_user_id"
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string "name"
+    t.string "participants"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status", default: false
+    t.index ["user_id"], name: "index_works_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "reservations", "users"
+  add_foreign_key "works", "users"
 end

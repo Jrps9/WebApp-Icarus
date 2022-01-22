@@ -17,6 +17,12 @@
   }
 }
 
+.form-actions {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+
 .form-control {
   font-style: italic;
   font-family: $body-font;
@@ -24,7 +30,7 @@
   font-size: 20px;
   margin: 4px 0px 28px;
   border: 1px solid $bleuboat;
-  border-radius: 18px;
+  border-radius: 4px;
   text-align: center;
   height: 44px;
   &:focus {
@@ -41,25 +47,99 @@
 }
 
 .btn {
-    border: none;
-    text-decoration: none;
-    background-color: $bleuboat;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 28px;
-    font-size: 20px;
-    font-family: $body-font;
-    color: white;
-    font-weight: 500;
-    width: 100%;
-    cursor: pointer;
+  border: none;
+  text-decoration: none;
+  background-color: $bleuboat;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+  font-size: 20px;
+  font-family: $body-font;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
 }
 
-// input {
-//   border: none;
-//   font-family: $body-font;
-//   width: 100%;
-//   color: white;
-// }
+.portrait-container {
+  flex-direction: initial;
+  justify-content: space-evenly;
+  legend {
+    font-size: 24px;
+  }
+}
+
+.portrait-item {
+  flex-grow: 1;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.portrait-select {
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  position: absolute;
+}
+
+.portrait-select + label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 0px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+#work_participants_roro,
+#spent_participants_roro {
+  + label {
+    background-image: $roro;
+    background-color: $bleuroro;
+    opacity: 0.6;
+  }
+  &:checked + label {
+  box-shadow: 0px 0px 8px $bleuroroshadow;
+  opacity: 1;
+  }
+}
+
+#work_participants_choco,
+#spent_participants_choco {
+  + label {
+    background-image: $choco;
+    background-color: $orangechoco;
+    opacity: 0.6;
+  }
+  &:checked + label {
+  box-shadow: 0px 0px 8px $orangechocoshadow;
+  opacity: 1;
+  }
+}
+
+#work_participants_loulou,
+#spent_participants_loulou {
+  + label {
+    background-image: $jlp;
+    background-color: $vertjl;
+    opacity: 0.6;
+  }
+  &:checked + label {
+  box-shadow: 0px 0px 8px $vertjlshadow;
+  opacity: 1;
+  }
+}
+
+abbr {
+  display: none;
+}

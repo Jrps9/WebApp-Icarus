@@ -1,9 +1,11 @@
 .arrow-back {
   svg {
     position: absolute;
-    top: 4.5vh;
+    top: 0.5vh;
     left: 3vw;
+    z-index: 1001;
   }
+  z-index: 1001;
 }
 
 .cross, .cross2, .cross3 {

@@ -59,3 +59,15 @@
 .opacityPlus {
   opacity: 1;
 }
+
+.--plusrot {
+  transform: rotate(360deg);
+}
+
+.--moinsrot {
+  transform: rotate(-360deg);
+}
+
+.d-flex {
+  display: flex;
+}

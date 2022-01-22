@@ -14,17 +14,4 @@
       </svg>
     </div>
     <% end %>
-<div class="container-icarus">
-  <h1 class="text-center">Tresorerie</h1>
-  <h3 class="text-center">- <%= current_user.name %> -</h3>
-
-  <section class="section">
-    <h4>Listing de vos dépenses</h4>
-    <p>Total dépensé : <em><%= current_user.allWhiteSpent %></em> €</p>
-    <div class="menu">
-      <% current_user.spent.all.order("created_at desc").each do |s| %>
-      <div class="listing"><p><%= s.white_spent %> € </p><p><%= s.name %>  </p><p><%= s.created_at.day %>/<%= s.created_at.month %>/<%= s.created_at.year %></p></div>
-      <% end %>
-    </div>
-  </section>
-</div>
+<%= render 'shared/form'%>

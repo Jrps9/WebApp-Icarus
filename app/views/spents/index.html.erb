@@ -15,7 +15,8 @@
     </div>
     <% end %>
 <div class="container-icarus">
-  <h1 class="text-center">Dépenses Total</h1>
+  <h1 class="text-center">Trésorerie</h1>
+  <h3 class="text-center">- Toutes les dépenses -</h3>
   <section class="section">
     <% @spents.each do |s| %>
     <div class="listing <%= class_names({green: s.user.id == 1}, {blue: s.user.id == 2}, {orange: s.user.id == 3}) %>">

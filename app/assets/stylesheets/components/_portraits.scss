@@ -1,0 +1,37 @@
+$jlp: url("jlpbg.png");
+$choco: url("chocoprofilssbg.png");
+$roro: url("rorosansbg.png");
+
+.portrait {
+    &.--small {
+        height: 60px;
+        width: 60px;
+        border-radius: 60px;
+        object-fit: cover;
+        object-position: center;
+        &.Choco {
+            background-color: $orangechoco;
+            box-shadow: 0px 0px 8px $orangechocoshadow;
+            opacity: 1;
+        }
+        &.Roro {
+            background-color: $bleuroro;
+            box-shadow: 0px 0px 8px $bleuroroshadow;
+            opacity: 1;
+        }
+        &.Loulou {
+            background-color: $vertjl;
+            box-shadow: 0px 0px 8px $vertjlshadow;
+            opacity: 1;
+        }
+    }
+}
+
+.show-portrait-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.portrait-column {
+    text-align: center;
+}

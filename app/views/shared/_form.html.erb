@@ -1,0 +1,90 @@
+<% if @type == "task" %>
+  <div class="formbg --work">
+    <div class="form-overlay">
+      <div class="container-icarus">
+          <h2><%= params[:action] == "edit" ? "Editer une tâche" : "Créer une tâche"  %></h2>
+          <%= simple_form_for(@work) do |f| %>
+              <%= f.error_notification %>
+              <div class="form-inputs">
+              <%= f.input :name,
+                          label: "Nom de la tâche",
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "name" }%>
+              <%= f.input :description,
+                          required: true,
+                          hint: ("#{@minimum_description_length} characters minimum" if @minimum_description_length),
+                          input_html: { autocomplete: "new-description" } %>
+
+              <% if params[:action] == "edit" %>
+                <%= f.input :status,
+                            label: "Réalisé ?" %>
+                <h3 class="text-center">Participants</h3>
+                <div class="show-portrait-container">
+                    <% @work.workersName.each do |worker|%>
+                        <div class="portrait-column">
+                            <%= image_tag(worker.portrait, :class => "portrait --small #{worker.name}") %>
+                            <p><%= worker.name %></p>
+                        </div>
+                    <% end %>
+                </div>
+              <div class="form-actions">
+                <%= f.button :submit, "Editer une tâche" %>
+              </div>
+
+              <% end %>
+              <% if params[:action] == "new" %>
+                <%= f.input :participants,
+                            as: :check_boxes,
+                            collection: Work::AUTHORIZED_PARTICIPANTS,
+                            include_blank: false,
+                            wrapper_html: {class: "portrait-container"},
+                            item_wrapper_class: 'portrait-item',
+                            input_html: {class: 'portrait-select'} %>
+                <div class="form-actions">
+                  <%= f.button :submit, "Créer une tâche" %>
+                </div>
+              <% end %>
+              </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% if @type == "spent" %>
+  <div class="formbg --spent">
+    <div class="form-overlay">
+      <div class="container-icarus">
+          <h2>Ajouter une dépense</h2>
+          <%= simple_form_for(@spent) do |f| %>
+              <%= f.error_notification %>
+              <div class="form-inputs">
+              <%= f.input :name,
+                          label: "Nom de la dépense",
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "name" }%>
+              <%= f.input :white_spent,
+                          required: true,
+                          label: "Montant" %>
+              <%= f.input :description,
+                          required: true,
+                          hint: ("#{@minimum_description_length} characters minimum" if @minimum_description_length),
+                          input_html: { autocomplete: "new-description" } %>
+              <%= f.input :participants,
+                          as: :check_boxes,
+                          collection: Spent::AUTHORIZED_PARTICIPANTS,
+                          include_blank: false,
+                          wrapper_html: {class: "portrait-container"},
+                          item_wrapper_class: 'portrait-item',
+                          input_html: {class: 'portrait-select'} %>
+              </div>
+              <div class="form-actions">
+              <%= f.button :submit, "Ajouter la dépense" %>
+              </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

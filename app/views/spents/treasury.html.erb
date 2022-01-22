@@ -17,46 +17,33 @@
 <div class="container-icarus">
 
   <h1 class="text-center">Tresorerie</h1>
-
-  <p>Dépenses total : <%= @totalspent %></p>
-
-  <p>Dépense/Captain : <%= @captaindebt %></p>
-
-  <p>Loulou doit : </p>
-  <p>Roro doit : </p>
-  <p>Choco doit à <%= @toWho2 %> <%= @chocodebt %> </p>
-  <p><%= @chocodebt + @rorodebt%></p>
-  <p><%= @toWho%></p>
-
-
-  <h3>Equilibre :</h3>
-  <p><%= @rorostate %></p>
-  <p><%= @louloustate %></p>
-  <p><%= @chocostate %></p>
-  <p><%= @total %></p>
+  <h3 class="text-center">- Général-</h3>
 
   <section class="section">
     <p>Section pour le camembert</p>
-    <h4>Caisse Blanche -><%= Spent.totalWhiteSpent %></h4>
-    <h4>Caisse Noir -><%= Spent.totalBlackSpent %></h4>
-    <h4>Tresorerie Total -><%= Spent.totalBlackSpent + Spent.totalWhiteSpent %></h4>
-
+    <p>Caisse Blanche -><%= Spent.totalWhiteSpent %></p>
+    <p>Caisse Noir -><%= Spent.totalBlackSpent %></p>
+    <p>Tresorerie Total -><%= Spent.totalBlackSpent + Spent.totalWhiteSpent %></p>
   </section>
 
   <section class="section">
-    <h3>Capitaine <%= current_user.name %></h3>
-    <div class="menu">
-      <div class="button-icarus" id="newSpent"><h4>Ajouter une dépense</h4></div>
-      <div class="button-icarus"><h4>Rembourser ce que je dois</h4></div>
-      <%= link_to captain_path, class: "button-icarus" do %><h4>Voir mes dépenses</h4><% end %>
+    <div class="space-between">
+      <h3>Capitaine <%= current_user.name %></h3><div class="space-between"><p>Voir</p><i class="fas fa-plus accordeon"></i></div>
+    </div>
+    <div class="scroll-list --hidden">
+      <%= link_to new_spent_path, class: "button-icarus" do %><h4>Ajouter une dépense</h4><% end %>
+      <%# <div class="button-icarus"><h4>Rembourser</h4></div> %>
+      <%= link_to captain_path, class: "button-icarus" do %><h4>Mes dépenses</h4><% end %>
     </div>
   </section>
 
   <section class="section">
-    <h3>L'Equipage</h3>
-    <div class="menu">
-      <%= link_to spents_path, class: "button-icarus" do %><h4>Voir toutes les dépenses</h4><% end %>
-      <div class="button-icarus"><h4>Gérer la Caisse de bord</h4></div>
+    <div class="space-between">
+      <h3>L'Equipage</h3><div class="space-between"><p>Voir</p><i class="fas fa-plus accordeon"></i></div>
+    </div>
+    <div class="scroll-list --hidden">
+      <%= link_to spents_path, class: "button-icarus" do %><h4>Toutes les dépenses</h4><% end %>
+      <div class="button-icarus"><h4>Caisse de bord</h4></div>
     </div>
   </section>
 

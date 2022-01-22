@@ -1,8 +1,12 @@
 class SpentsController < ApplicationController
     def index
         @spents = Spent.all
+    end
+
+    def new
+        @type = "spent"
         @spent = Spent.new
-        end
+    end
 
         def show
         @spent = Spent.find(params[:id])
@@ -31,7 +35,8 @@ class SpentsController < ApplicationController
         @spent = Spent.new(spent_params)
         @spent.user = current_user
             if @spent.save
-                redirect_to treasury_path, notice: "Dépense ajoutée ! Icarus vous remercie."
+                flash.notice = "Dépense ajoutée ! Icarus vous remercie."
+                redirect_to treasury_path
             else
                 redirect_to root_path
             end
@@ -82,6 +87,6 @@ class SpentsController < ApplicationController
         private
 
         def spent_params
-        params.require(:spent).permit(:white_spent, :black_spent, :name)
+        params.require(:spent).permit(:white_spent, :black_spent, :name, :participants)
         end
 end

@@ -1,17 +1,37 @@
-.page-login {
+.formbg {
     height: 100vh;
     max-width: 100vw;
-    background-image: url('IMG_7504-2');
-    background-size: cover;
-    background-position: center;
     text-shadow: 0px 0px 4px grey;
+    &.--login {
+        background-image: $loginformbg;
+        background-size: cover;
+        background-position: center;
+    }
+    &.--work {
+        background-image: $workformbg;
+        background-size: cover;
+    }
+    &.--spent {
+        background-image: $spentformbg;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
-.page-overlay {
+// .form-login {
+//     height: 100vh;
+//     max-width: 100vw;
+//     background-image: $loginformbg;
+//     background-size: cover;
+//     background-position: center;
+//     text-shadow: 0px 0px 4px grey;
+// }
+
+.form-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.70);
+    background-color: rgba(255, 255, 255, 0.6);
 }

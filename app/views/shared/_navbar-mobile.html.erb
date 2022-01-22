@@ -9,24 +9,27 @@
       <li><i class="icons fas fa-ship
       <%= 'active' if current_page?(ship_path) %>
       <%= 'active' if current_page?(notices_path) %>
+      <%= 'active' if current_page?(works_path) %>
+      <%= 'active' if controller.controller_name == "works" %>
       <%= 'active' if controller.controller_name == "reservations" %>">
+      </i></li>
+    <% end %>
+
+
+    <%= link_to crew_path do%>
+      <li><i class="icons fas fa-users <%= 'active' if current_page?(crew_path) %>"></i></li>
+      <% end %>
+
+    <%= link_to treasury_path do%>
+      <li><i class="icons fas fa-gem
+      <%= 'active' if current_page?(treasury_path) %>
+      <%= 'active' if current_page?(spents_path) %>
+      <%= 'active' if current_page?(captain_path) %>">
       </i></li>
     <% end %>
 
     <%= link_to map_path do%>
     <li><i class="icons fas fa-map-marked-alt <%= 'active' if current_page?(map_path) %>"></i></li>
-    <% end %>
-
-    <%= link_to crew_path do%>
-    <li><i class="icons fas fa-users <%= 'active' if current_page?(crew_path) %>"></i></li>
-    <% end %>
-
-    <%= link_to treasury_path do%>
-    <li><i class="icons fas fa-gem
-    <%= 'active' if current_page?(treasury_path) %>
-    <%= 'active' if current_page?(spents_path) %>
-    <%= 'active' if current_page?(captain_path) %>">
-    </i></li>
     <% end %>
 
   </ul>
