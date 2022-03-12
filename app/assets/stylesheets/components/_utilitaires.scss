@@ -60,6 +60,12 @@
   opacity: 1;
 }
 
+.--plusrot2 {
+  ::before {
+    transform: rotate(360deg);
+  }
+}
+
 .--plusrot {
   transform: rotate(360deg);
 }
@@ -70,4 +76,8 @@
 
 .d-flex {
   display: flex;
+}
+
+.align-items {
+  align-items: center;
 }

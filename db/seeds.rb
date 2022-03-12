@@ -18,7 +18,7 @@ puts "Users are alive"
 
 Reservations = Reservation.create!([
     {user_id: user1.id, name: "Belle-île en Mer", destination: "Porquerolles", latitude: 42.998653, longitude: 6.167719},
-    {user_id: user1.id, name: "Le Bitch-Volley", destination: "Hyères", latitude: 43.035147 , longitude: 6.134487},
+    {user_id: user1.id, name: "Le Bitch-Volley", destination: "Hyères", latitude: 43.035147, longitude: 6.134487},
     {user_id: user1.id, name: "Ecouter du Jazz", destination: "Les Ambiez", latitude: 43.070172, longitude: 5.786512},
     {user_id: user1.id, name: "Boire des canons", destination: "Marseille", latitude: 43.220103, longitude: 5.330713},
     {user_id: user1.id, name: "Chiller sur la plage", destination: "Cavalaire", latitude: 43.181193, longitude: 6.546536},
@@ -33,4 +33,4 @@ Tache02 = Work.create(name: "test02done", description: "test status", user_id: u
 Esclave = User.create({email: "esclave@gmail.com", name: "Esclave", password: "tototo", password_confirmation: "tototo"})
 Tache01.user << Esclave
 
-puts "Tache créer, esclave au travail"
+puts "Tache créer, esclaves au travail"

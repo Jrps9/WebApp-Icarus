@@ -1,6 +1,6 @@
 class Spent < ApplicationRecord
     AUTHORIZED_PARTICIPANTS = ["Roro", "Choco", "Loulou"]
-    validates :participants, inclusion: { in: AUTHORIZED_PARTICIPANTS }
+    # validates :participants, inclusion: { in: AUTHORIZED_PARTICIPANTS }
 
     belongs_to :user
 
