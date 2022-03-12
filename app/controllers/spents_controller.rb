@@ -32,7 +32,6 @@ class SpentsController < ApplicationController
     end
 
     def create
-        console
         @spent = Spent.new(spent_params)
         @spent.user = current_user
             if @spent.save
