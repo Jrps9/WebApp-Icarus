@@ -75,7 +75,8 @@
               <%= f.input :participants,
                           as: :check_boxes,
                           collection: Spent::AUTHORIZED_PARTICIPANTS,
-                          include_blank: false,
+                          include_blank: true,
+                          include_hidden: false,
                           wrapper_html: {class: "portrait-container"},
                           item_wrapper_class: 'portrait-item',
                           input_html: {class: 'portrait-select'} %>

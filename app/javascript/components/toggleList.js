@@ -9,12 +9,12 @@ const toggleList = () => {
           if (e.currentTarget == triggerBtns[i]) {
             triggerBtns[i].closest("section").classList.toggle("open");
             Array.from(e.currentTarget.classList).includes("fa-minus")
-              ? (e.currentTarget.classList = "fas fa-plus accordeon --plusrot")
+              ? (e.currentTarget.classList = "fas fa-plus accordeon --plusrot2")
               : (e.currentTarget.classList =
                   "fas fa-minus accordeon --moinsrot");
           } else {
             triggerBtns[i].closest("section").classList.remove("open");
-            triggerBtns[i].classList = "fas fa-plus accordeon --plusrot";
+            triggerBtns[i].classList = "fas fa-plus accordeon --plusrot2";
           }
         }
       });
