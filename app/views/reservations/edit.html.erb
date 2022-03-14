@@ -16,12 +16,13 @@
 <% end %>
 <div class="container-icarus-show">
   <h1 class="text-center">Editer la sortie</h1>
-  <%= simple_form_for (@reservation) do |f| %>
-  <%= f.input :destination, label: "Destination" %>
-  <%= f.input :name, label: "Nom de la sortie" %>
-  <%= f.input :description, as: :text %>
-  <%= f.input :start_day, as: :string, label: "Jour de départ"%>
-  <%= f.input :end_day, as: :string, label: "Jour d'arrivée"%>
-  <%= f.button :submit, 'Confirmer' %>
+    <%= simple_form_for (@reservation) do |f| %>
+    <%= f.input :destination, label: "Destination" %>
+    <%= f.input :name, label: "Nom de la sortie" %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :photos, as: :file, label: "Photos de la sortie :" %>
+    <%= f.input :start_day, as: :string, label: "Jour de départ"%>
+    <%= f.input :end_day, as: :string, label: "Jour d'arrivée"%>
+    <%= f.button :submit, 'Confirmer' %>
   <% end %>
 </div>
