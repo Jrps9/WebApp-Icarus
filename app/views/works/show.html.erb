@@ -24,7 +24,9 @@
     <div class="show-portrait-container">
         <% @work.workersName.each do |worker|%>
             <div class="portrait-column">
-                <%= image_tag(worker.portrait, :class => "portrait --small #{worker.name}") %>
+                <% if worker.portrait %>
+                  <%= image_tag(worker.portrait, :class => "portrait --small #{worker.name}") %>
+                <% end %>
                 <p><%= worker.name %></p>
             </div>
         <% end %>

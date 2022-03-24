@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :reservations
-  resources :spents
+  resources :spents do
+    resources :debts
+  end
   resources :works
   root to: "pages#home"
   get "crew", to: "pages#crew"

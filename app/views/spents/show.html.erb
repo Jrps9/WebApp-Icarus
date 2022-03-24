@@ -1,0 +1,62 @@
+<%= link_to 'javascript:history.back()'  do %>
+    <div class="arrow-back">
+      <svg
+        width="35"
+        height="35"
+        viewBox="0 0 35 35"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5.47978 17.1464C5.28452 17.3417 5.28452 17.6583 5.47978 17.8536L8.66176 21.0355C8.85702 21.2308 9.1736 21.2308 9.36887 21.0355C9.56413 20.8403 9.56413 20.5237 9.36887 20.3284L6.54044 17.5L9.36887 14.6716C9.56413 14.4763 9.56413 14.1597 9.36887 13.9645C9.1736 13.7692 8.85702 13.7692 8.66176 13.9645L5.47978 17.1464ZM24.5 17L5.83333 17V18L24.5 18V17Z"
+          fill="#003674"
+        />
+      </svg>
+    </div>
+    <% end %>
+<div class="container-icarus">
+  <h1 class="text-center">Tresorerie</h1>
+  <h3 class="text-center">- Dépense -</h3>
+  <section class="section">
+    <h1 class="text-center"><%= @spent.name %></h1>
+    <div class="show-description">
+      <h3 class="text-center"><%= @debt.creatorName %> a avancé <%= @spent.white_spent %>€</h3>
+      <div id="portrait-container" class="show-portrait-container">
+          <% @debt.participants.each do |worker|%>
+              <div class="portrait-column">
+                  <% if worker.portrait %>
+                    <%= image_tag(worker.portrait, :class => "portrait --small #{worker.name}") %>
+                  <% end %>
+                  <% if worker.isHeInDebt(@debt)%>
+                    <p><%= worker.name %> doit encore <%= @debt.debtPart %>€.</p>
+                    <% else %>
+                    <p><%= worker.name %> à payé sa part.</p>
+                  <% end %>
+              </div>
+          <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="debt-section" class="section">
+    <% if !@debt.paid? %>
+      <% if !@debt.creator(current_user) %>
+        <% if current_user.isHeInDebt(@debt) %>
+          <%= simple_form_for ([@spent, @debt]), remote: true do |f| %>
+            <h3>As tu payé ta dette ? </h3>
+            <%= f.input "paid_#{current_user.id}" ,label: "OUI", as: :boolean%>
+            <%= f.submit "Je suis sur" %>
+            <% end %>
+        <% else %>
+          <p><%= current_user.name %> détend-toi, tu as payé ta part...</p>
+        <% end %>
+      <% end %>
+
+    <% else %>
+      <h4>Tout le monde a payé sa part !</h4>
+    <% end %>
+  </section>
+  <section class="section">
+    <%= @spent.description %>
+  </section>
+</div>

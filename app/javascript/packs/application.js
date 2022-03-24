@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -25,12 +26,16 @@ require("channels")
 // External imports
 import "bootstrap";
 
+import Chart from 'chart.js/auto';
+global.Chart = Chart;
+
 import { equipageToggle } from '../components/equipage';
 import { reservationsToggle } from '../components/reservations';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
 import { newSpentModal } from '../components/spentModal';
 import { toggleList } from '../components/toggleList';
+import { initChart} from '../plugins/chart';
 
 document.addEventListener('turbolinks:load', () => {
   equipageToggle();
@@ -39,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   newSpentModal();
   toggleList();
+  initChart();
 });

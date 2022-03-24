@@ -14,6 +14,8 @@
       </svg>
     </div>
     <% end %>
+<div id="formModal">
+</div>
 <div class="container-icarus">
 
   <h1 class="text-center">Tresorerie</h1>
@@ -21,17 +23,32 @@
 
   <section class="section">
     <p>Section pour le camembert</p>
-    <p>Caisse Blanche -><%= Spent.totalWhiteSpent %></p>
-    <p>Caisse Noir -><%= Spent.totalBlackSpent %></p>
-    <p>Tresorerie Total -><%= Spent.totalBlackSpent + Spent.totalWhiteSpent %></p>
+    <% Debt.unpaidDebts.each do |debt| %>
+      <%= debt.quiDoitQuoi %>
+    <% end %>
+    <div>
+      <canvas id="myChart" data-cpts="<%=@data_cpts%>" data-debts="<%=@data_debts%>"></canvas>
+    </div>
+  </section>
+
+  <section id="debt-section" class="section">
+    <h3>Etat des relations actuelles : </h3>
+      <% if Debt.general[0] != [] %>
+        <% Debt.general[0].each do |d| %>
+          <p><%= d %></p>
+          <% end %>
+      <% else %>
+        <p>Personne ne doit rien à personne...on s'ennuierait presque !</p>
+      <% end %>
   </section>
 
   <section class="section">
     <div class="space-between">
-      <h3>Capitaine <%= current_user.name %></h3><div class="space-between"><p>Voir</p><i class="fas fa-plus accordeon"></i></div>
+      <h3>Capitaine <%= current_user.name %></h3>
+      <div class="space-between"><p>Voir</p><i class="fas fa-plus accordeon"></i></div>
     </div>
     <div class="scroll-list --hidden">
-      <%= link_to new_spent_path, class: "button-icarus" do %><h4>Ajouter une dépense</h4><% end %>
+      <%= link_to new_spent_path, class: "button-icarus", remote: true do %><h4>Ajouter une dépense</h4><% end %>
       <%# <div class="button-icarus"><h4>Rembourser</h4></div> %>
       <%= link_to captain_path, class: "button-icarus" do %><h4>Mes dépenses</h4><% end %>
     </div>
@@ -48,8 +65,3 @@
   </section>
 
 </div>
-
-<%= render "shared/spent-modal"  %>
-
-
-

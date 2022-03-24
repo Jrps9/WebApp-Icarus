@@ -47,6 +47,24 @@
   }
 }
 
+.ronron {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: red;
+  z-index: 1000;
+}
+
+// @keyframes ronron {
+//   0% {
+//     background-color: red;
+//   }
+//   100% {
+//     background-color: transparent;
+//   }
+// }
+
 .button-circle {
   position: relative;
   height: 120px;

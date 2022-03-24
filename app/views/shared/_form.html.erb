@@ -23,8 +23,10 @@
                 <div class="show-portrait-container">
                     <% @work.workersName.each do |worker|%>
                         <div class="portrait-column">
+                          <% if worker.portrait %>
                             <%= image_tag(worker.portrait, :class => "portrait --small #{worker.name}") %>
-                            <p><%= worker.name %></p>
+                          <% end %>
+                          <p><%= worker.name %></p>
                         </div>
                     <% end %>
                 </div>
@@ -37,7 +39,8 @@
                 <%= f.input :participants,
                             as: :check_boxes,
                             collection: Work::AUTHORIZED_PARTICIPANTS,
-                            include_blank: false,
+                            include_blank: true,
+                            include_hidden: false,
                             wrapper_html: {class: "portrait-container"},
                             item_wrapper_class: 'portrait-item',
                             input_html: {class: 'portrait-select'} %>
@@ -57,7 +60,7 @@
     <div class="form-overlay">
       <div class="container-icarus">
           <h2>Ajouter une dépense</h2>
-          <%= simple_form_for(@spent) do |f| %>
+          <%= simple_form_for (@spent), remote: true do |f| %>
               <%= f.error_notification %>
               <div class="form-inputs">
               <%= f.input :name,
@@ -70,6 +73,7 @@
                           label: "Montant" %>
               <%= f.input :description,
                           required: true,
+                          prompt: "La description de la dépense...",
                           hint: ("#{@minimum_description_length} characters minimum" if @minimum_description_length),
                           input_html: { autocomplete: "new-description" } %>
               <%= f.input :participants,
@@ -81,6 +85,10 @@
                           item_wrapper_class: 'portrait-item',
                           input_html: {class: 'portrait-select'} %>
               </div>
+                <%= f.simple_fields_for :debt do |form| %>
+                  <%= form.hidden_field :amount %>
+                  <%= form.hidden_field "paid_#{current_user.id}",value: true%>
+                <% end %>
               <div class="form-actions">
               <%= f.button :submit, "Ajouter la dépense" %>
               </div>

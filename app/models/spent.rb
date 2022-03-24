@@ -1,8 +1,10 @@
 class Spent < ApplicationRecord
     AUTHORIZED_PARTICIPANTS = ["Roro", "Choco", "Loulou"]
-    validates :participants, inclusion: { in: AUTHORIZED_PARTICIPANTS }
+    # validates :participants, inclusion: { in: AUTHORIZED_PARTICIPANTS}
 
-    belongs_to :user
+    has_and_belongs_to_many :user
+    has_one :debt, dependent: :destroy
+    accepts_nested_attributes_for :debt
 
     def self.totalWhiteSpent
         @counter = 0
@@ -11,6 +13,7 @@ class Spent < ApplicationRecord
         end
         return @counter
     end
+
     def self.totalBlackSpent
         @counter = 0
         all.each do |s|

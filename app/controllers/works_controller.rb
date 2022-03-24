@@ -1,5 +1,8 @@
 class WorksController < ApplicationController
 
+    def index
+    end
+
     def show
         @work = Work.find(params[:id])
     end
@@ -34,17 +37,25 @@ class WorksController < ApplicationController
         end
         @work.user_id = current_user.id
             if @work.save
-                flash.notice = "Tâche créer ! Bon courage !"
-                redirect_to works_path
+                flash.now[:notice] = "Tâche créer ! Bon courage !"
+                redirect_to root_path
             else
                 redirect_to root_path
             end
     end
 
+    def destroy
+        @work = Work.find(params[:id])
+        @work.destroy
+        flash.notice="Tâche '#{@work.name}' a bien été supprimée."
+
+        redirect_to works_path
+    end
+
     private
 
     def work_params
-      params.require(:work).permit(:name, :description, :participants, :status)
+      params.require(:work).permit(:name, :description, :status, :participants => [])
     end
 
 end

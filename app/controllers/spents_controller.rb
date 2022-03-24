@@ -6,10 +6,19 @@ class SpentsController < ApplicationController
     def new
         @type = "spent"
         @spent = Spent.new
+        @spent.build_debt
+        respond_to do |format|
+            format.html {
+                flash.notice = "ca chie"
+                redirect_to treasury_path
+            }
+            format.js
+        end
     end
 
     def show
         @spent = Spent.find(params[:id])
+        @debt = @spent.debt
         @spentvalue = @spent.id
         @lastspent = Spent.last
         @nextspent = Spent.where("id < ?", @spentvalue).last
@@ -33,60 +42,37 @@ class SpentsController < ApplicationController
 
     def create
         @spent = Spent.new(spent_params)
-        @spent.user = current_user
-            if @spent.save
-                flash.notice = "Dépense ajoutée ! Icarus vous remercie."
-                redirect_to treasury_path
-            else
-                redirect_to root_path
+        @spent.debt.amount = @spent.white_spent
+        team = params.dig(:spent, :participants)
+        team.each do |member|
+            if member != ""
+              @spent.user << User.find_by(name: member)
+              @spent.debt.user << User.find_by(name: member)
             end
+        end
+        @spent.user_id = current_user.id
+        if @spent.save
+            respond_to do |format|
+                format.html {
+                    flash.notice = "ca chie"
+                    redirect_to treasury_path
+                }
+                format.js
+            end
+        end
     end
 
     def treasury
         @spents = Spent.all
         @spent = Spent.new
-
-        @loulouspent = Spent.where(:user_id => 1).totalWhiteSpent
-        @rorospent = Spent.where(:user_id => 2).totalWhiteSpent
-        @chocospent = Spent.where(:user_id => 3).totalWhiteSpent
-        @totalspent = Spent.totalWhiteSpent
-
-        allCaptain = [@loulouspent, @rorospent, @chocospent]
-
-        @total = 0
-
-        allCaptain.each do |debt|
-            @total += debt
-            @avanceur = []
-            if debt > 0
-                @avanceur.push debt
-            end
-        end
-
-        @captaindebt = @totalspent/3
-
-        @louloudebt = (@loulouspent - @captaindebt)
-        @rorodebt = (@rorospent - @captaindebt)
-        @chocodebt = (@chocospent - @captaindebt)
-
-        @whopaid =
-
-        @toWho = (@louloudebt > @rorodebt) ? @louloudebt : @rorodebt
-        @toWho2 = (@chocodebt > @toWho) ? @chocodebt : @toWho
-
-        @louloustate= @louloudebt > 0 ? "loulou à avancé #{@louloudebt} €" : "loulou doit #{@louloudebt} €"
-        @rorostate= @rorodebt > 0 ? "roro à avancé #{@rorodebt} €" : "roro doit #{@rorodebt} €"
-        @chocostate= @chocodebt > 0 ? "choco à avancé #{@chocodebt} €" : "choco doit #{@chocodebt} €"
-
-
-
-
-
+        @data_cpts = ["Loulou","Roro","Choco"]
+        # @data_debts = Debt.unpaidDebts
+        @data_debts = [1, 2, 3]
     end
 
     private
 
     def spent_params
-        params.require(:spent).permit(:white_spent, :black_spent, :name, :description, :participants => [])
+        params.require(:spent).permit(:white_spent, :black_spent, :name, :description, debt_attributes: [:amount, :participants, :paid_1, :paid_2, :paid_3], :participants => [])
     end
 end

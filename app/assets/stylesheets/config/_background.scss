@@ -1,7 +1,7 @@
 // Images
-$loginformbg: url('IMG_7504-2');
-$workformbg: url('carp02');
-$spentformbg: url('chest02');
+$loginformbg: asset_url('IMG_7504-2');
+$workformbg: asset_url('carp02');
+$spentformbg: asset_url('chest02');
 
 // Gradients
 $scrollgradient: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9233894241290266) 39%, rgba(255,255,255,0.7693277994791666) 76%, rgba(255,255,255,0) 100%);

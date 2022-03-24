@@ -1,0 +1,7 @@
+const section = document.querySelector("#debt-section")
+section.innerHTML = ""
+section.insertAdjacentHTML("beforeend", "Merci d'avoir rendu l'argent");
+const updateDiv = () => {
+    $("#portrait-container").load(window.location.href + " #portrait-container");
+};
+updateDiv()

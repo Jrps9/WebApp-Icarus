@@ -19,14 +19,19 @@
   <h3 class="text-center">- Toutes les dépenses -</h3>
   <section class="section">
     <% @spents.each do |s| %>
-    <div class="listing <%= class_names({green: s.user.id == 1}, {blue: s.user.id == 2}, {orange: s.user.id == 3}) %>">
-      <p><%= s.white_spent %> €</p>
-      <p><%= s.name %></p>
-      <p>
-        <%= s.created_at.day %>/<%= s.created_at.month %>/<%= s.created_at.year
-        %>
-      </p>
-    </div>
+      <%= link_to spent_path(s) do %>
+        <div class="listing <%= class_names({green: s.user_id == 1}, {blue: s.user_id == 2}, {orange: s.user_id == 3}) %>">
+          <% if s.debt.paid? %>
+            <p> PAYEE</p>
+          <% end %>
+          <p><%= s.white_spent %> €</p>
+          <p><%= s.name %></p>
+          <p>
+            <%= s.created_at.day %>/<%= s.created_at.month %>/<%= s.created_at.year
+            %>
+          </p>
+        </div>
+      <% end %>
     <% end %>
   </section>
 </div>

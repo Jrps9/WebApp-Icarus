@@ -1,5 +1,6 @@
 class Work < ApplicationRecord
   AUTHORIZED_PARTICIPANTS = ["Roro", "Choco", "Loulou"]
+  # validates :participants, inclusion: { in: AUTHORIZED_PARTICIPANTS }
 
   has_and_belongs_to_many :user
 
