@@ -1,6 +1,7 @@
 const initChart = () => {
-  const ctx = document.querySelector('#myChart').getContext('2d');
-  if (ctx) {
+  const ctx0 = document.querySelector('#myChart')
+  if (ctx0) {
+    const ctx = ctx0.getContext('2d');
     const createChart = () => {
       const data = {
         labels: JSON.parse(ctx.canvas.dataset.cpts),
@@ -10,8 +11,7 @@ const initChart = () => {
       };
 
       const image = new Image();
-      image.src = 'https://www.chartjs.org/img/chartjs-logo.svg';
-
+      image.src = 'https://res.cloudinary.com/dihaz37dr/image/upload/h_100,w_100/v1648329725/treasure_bn2fgr.png';
       const plugin = {
         id: 'custom_canvas_background_image',
         beforeDraw: (chart) => {
@@ -36,7 +36,7 @@ const initChart = () => {
             '#73a3da',
             '#e4813f'
           ],
-          hoverOffset: 5,
+          hoverOffset: 4,
           cutout: "90%",
           plugins: {
             legend: {

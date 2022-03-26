@@ -8,11 +8,11 @@
   position: relative;
   scroll-behavior: smooth;
   &.--hidden {
-    height: 0vh;
+    height: 0px;
     transform: scale(1, 0.5);
   }
   &.open {
-    height: 20vh;
+    height: 163px;
     transform: scale(1, 1);
   }
 }
