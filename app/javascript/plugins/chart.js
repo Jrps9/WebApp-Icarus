@@ -1,29 +1,61 @@
 const initChart = () => {
   const ctx = document.querySelector('#myChart').getContext('2d');
   if (ctx) {
-    const data = {
-      labels: JSON.parse(ctx.canvas.dataset.cpts),
-      datasets: [{
-        data: JSON.parse(ctx.canvas.dataset.debts),
-      }]
-    };
+    const createChart = () => {
+      const data = {
+        labels: JSON.parse(ctx.canvas.dataset.cpts),
+        datasets: [{
+          data: JSON.parse(ctx.canvas.dataset.debts),
+        }]
+      };
 
-    const config = {
-      type: 'doughnut',
-      data: data,
-      options: {
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)'
-        ],
-      }
-    };
+      const image = new Image();
+      image.src = 'https://www.chartjs.org/img/chartjs-logo.svg';
 
-    new Chart(
-      document.getElementById('myChart'),
-      config
-    );
+      const plugin = {
+        id: 'custom_canvas_background_image',
+        beforeDraw: (chart) => {
+          if (image.complete) {
+            const ctx = chart.ctx;
+            const {top, left, width, height} = chart.chartArea;
+            const x = left + width / 2 - image.width / 2;
+            const y = top + height / 2 - image.height / 2;
+            ctx.drawImage(image, x, y);
+          } else {
+            image.onload = () => chart.draw();
+          }
+        }
+      };
+
+      const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+          backgroundColor: [
+            '#789564',
+            '#73a3da',
+            '#e4813f'
+          ],
+          hoverOffset: 5,
+          cutout: "90%",
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          datasets: {
+            backgroundColor: "red"
+          }
+        },
+        plugins: [plugin],
+      };
+
+      new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+    }
+    createChart();
   }
 }
 

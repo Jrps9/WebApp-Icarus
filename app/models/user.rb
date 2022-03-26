@@ -11,6 +11,14 @@ class User < ApplicationRecord
     return debt.cbOnMeDoit.include?(self)
   end
 
+  def self.team
+    team = []
+    where(:id => [3, 2, 1]).order(id: "ASC").each do |tm|
+      team << tm
+    end
+    return team
+  end
+
   def allWhiteSpent
     @counter = 0
     Spent.where(:user_id => self.id).each do |s|

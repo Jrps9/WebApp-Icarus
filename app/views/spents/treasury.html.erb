@@ -22,12 +22,18 @@
   <h3 class="text-center">- Général-</h3>
 
   <section class="section">
-    <p>Section pour le camembert</p>
-    <% Debt.unpaidDebts.each do |debt| %>
-      <%= debt.quiDoitQuoi %>
-    <% end %>
-    <div>
-      <canvas id="myChart" data-cpts="<%=@data_cpts%>" data-debts="<%=@data_debts%>"></canvas>
+    <div id="chartDiv">
+      <canvas id="myChart" style="margin-bottom: 4vmin;" data-cpts="<%=@data_cpts%>" data-debts="<%=@data_debts%>"></canvas>
+    </div>
+    <div class="show-portrait-container">
+      <% User.team.each do |worker|%>
+          <div class="portrait-column">
+            <% if worker.portrait %>
+              <%= image_tag(worker.portrait, :class => "portrait --small #{worker.name}") %>
+            <% end %>
+            <p><%= worker.name %></p>
+          </div>
+      <% end %>
     </div>
   </section>
 

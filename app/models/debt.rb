@@ -171,8 +171,6 @@ class Debt < ApplicationRecord
       end
     end
 
-    response = []
-
     roroDebtChoco = roroCounterChoco - chocoCounterRoro
     roroDebtLoulou = roroCounterLoulou - loulouCounterRoro
 
@@ -182,8 +180,10 @@ class Debt < ApplicationRecord
     loulouDebtRoro = loulouCounterRoro - roroCounterLoulou
     loulouDebtChoco = loulouCounterChoco - chocoCounterLoulou
 
+    response = []
+
     if (roroDebtChoco > 0)
-      response += "Roro doit #{roroDebtChoco} à Choco"
+      response << "Roro doit #{roroDebtChoco} à Choco"
     end
     if (roroDebtLoulou > 0)
       response << "Roro doit #{roroDebtLoulou} à Loulou"
@@ -204,8 +204,27 @@ class Debt < ApplicationRecord
       response << "Loulou doit #{loulouDebtChoco} à Choco"
     end
 
-    return [response, response]
+    responseChart = {
+      Loulou: 0,
+      Roro: 0,
+      Choco: 0
+    }
 
+    response.each do |debt|
+      if debt[0] == "R"
+        responseChart[:Roro] += debt.tr("^0-9","").to_i
+      elsif debt[0] == "C"
+        responseChart[:Choco] += debt.tr("^0-9","").to_i
+      else debt[0] == "L"
+        responseChart[:Loulou] += debt.tr("^0-9","").to_i
+      end
+    end
+
+    chartNumber = []
+    responseChart.each do |key, value|
+       chartNumber << value
+    end
+
+    return [response, chartNumber]
   end
-
 end

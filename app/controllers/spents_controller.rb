@@ -54,10 +54,9 @@ class SpentsController < ApplicationController
         if @spent.save
             respond_to do |format|
                 format.html {
-                    flash.notice = "ca chie"
+                    flash.notice = "Dépense prise en compte !"
                     redirect_to treasury_path
                 }
-                format.js
             end
         end
     end
@@ -66,8 +65,7 @@ class SpentsController < ApplicationController
         @spents = Spent.all
         @spent = Spent.new
         @data_cpts = ["Loulou","Roro","Choco"]
-        # @data_debts = Debt.unpaidDebts
-        @data_debts = [1, 2, 3]
+        @data_debts = Debt.general[1] == [0,0,0] ? [1,1,1] : Debt.general[1]
     end
 
     private
