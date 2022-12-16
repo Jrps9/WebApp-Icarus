@@ -1,7 +1,6 @@
 const equipageToggle = () => {
 
     const crewcard = document.querySelectorAll(".crew-card");
-    let compt = 0;
 
     if (crewcard) {
         crewcard.forEach(crew => {

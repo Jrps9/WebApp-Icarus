@@ -18,8 +18,17 @@
     // max-height: 35vh;
     &.open {
         .scroll-list {
-            height: 20vh;
+            height: 23vh;
             transform: scale(1, 1);
+
+        }
+    }
+    .scroll-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .button-icarus {
+            margin: 0;
         }
     }
 }

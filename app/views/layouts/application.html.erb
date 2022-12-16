@@ -9,11 +9,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
   </head>
 
-  <body>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/navbar-mobile' %>
+  <body data-controller="barba" data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="home">
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+      <%= render 'shared/navbar-mobile' %>
+    </main>
   </body>
 </html>
